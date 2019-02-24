@@ -12,20 +12,20 @@ import utils as utils
 # the integer division and input()
 # mind your parentheses!
 
-from BrickPi import *   #import BrickPi.py file to use BrickPi operations
+from BrickPi import BrickPi.py *   #import BrickPi.py file to use BrickPi operations
 
-BrickPiSetup()  # setup the serial port for communication
+BrickPiSetup(PORT_A)  # setup the serial port for communication
 
 BrickPi.MotorEnable[PORT_A] = 1 #Enable the Motor A
 BrickPi.MotorEnable[PORT_B] = 1 #Enable the Motor B
 
-BrickPiSetupSensors() #Send the properties of sensors to BrickPi
+BrickPiSetupSensors(50) #Send the properties of sensors to BrickPi
 
 
 #Communication timeout in ms (how long since last valid communication before floating the motors).
 #0 disables the timeout so the motor would keep running even if it is not communicating with the RaspberryPi
 BrickPi.Timeout=3000
-print("BrickPiSetTimeout Status :",BrickPiSetTimeout())
+print("BrickPiSetTimeout Status :",BrickPiSetTimeout(3000))
 
 
 
@@ -44,7 +44,7 @@ def control_motor_with_keys(port_input, speed=50):
 
 
     #stop motor
-    
+
 
 
 
