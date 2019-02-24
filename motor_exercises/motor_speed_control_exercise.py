@@ -28,28 +28,42 @@ print("BrickPiSetTimeout Status :",BrickPiSetTimeout())
 def test_timeout(port, speed):
 
     # Inform the user that the motor at port "port" is starting with speed value "speed"
-
+    Print ("going to start at the port", port, "at the speed of", speed, "miles per hour. Just kidding that would be faster.")
 
     # Set the motor to speed using the BrickPi library command: BrickPi.MotorSpeed[PORT_NUMBER].
     # Choose the correct port according to the input variable 'port'. Valid options are:
     # 'PORT_A', 'PORT_B', 'PORT_C', 'PORT_D'
     # Inform the user in the case that he has choosen a wrong port option
-
-
+    if port == "PORT_A":
+        BrickPi.MotorSpeed[PORT_A] = speed
+    if port == "PORT_B":
+        BrickPi.MotorSpeed[PORT_B] = speed
+    if port == "PORT_C":
+        BrickPi.MotorSpeed[PORT_C] = speed
+    if port == "PORT_D:
+        BrickPi.MotorSpeed[PORT_D] = speed
+    else:
+        Print("sorry, whatever you wrote down is wrong. Please either write PORT_A, PORT_B, PORT_C, or PORT_D. Don't forget, python is case-sensetive, so spell it exactly like I do.")
 
 def move_motor_for_seconds(motor, speed, seconds):
 
     # set the motor speed using BrickPi library command BrickPi.MotorSpeed[PORT_A]
-
+    BrickPi.MotorSpeed[PORT_A] == 50
+    BrickPi.MotorSpeed[PORT_B] == 50
+    BrickPi.MotorSpeed[PORT_C] == 50
+    BrickPi.MotorSpeed[PORT_D] == 50
     # get the current time
-
+    current_time = time.time
     # loop while time difference is < 3
 
+        
     # solution 1
-
+    time_difference = 0
+    while(time_difference < 3):
+        new_time = time.time()
+        time_difference = new_time - current_time
     # solution 2 (more elegant and concise -> less lines of code)
-
-
+# there are two solutions!?!?
 
 if __name__ == "__main__":
 
