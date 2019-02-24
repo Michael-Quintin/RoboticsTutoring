@@ -35,16 +35,22 @@ def control_motor_with_keys(port_input, speed=50):
 
 
     # get user input to start motor
-
+start_motor = None
+    while(start_motor == 'g' or start_motor == 'G'):
+        start_motor = input("please press the key G. Please.")
 
     # start motor at speed 'speed'
-
+print("big vroom vroom at port", port, "with the speed of")
+    BrickPi.MotorSpeed[port] = speed
+    stop_motor = None
 
     # get user input to start motor
-
+while (not (stop_motor == 's' or stop_motor == 'S')):
+        stop_motor = input("press the s key to stop the motor please!")
+        BrickPiUpdateValues()
 
     #stop motor
-    
+    BrickPi.MotorSpeed[PORT_A] = 0
 
 
 
