@@ -32,7 +32,7 @@ print("BrickPiSetTimeout Status :",BrickPiSetTimeout())
 def control_motor_with_keys(port_input, speed=50):
 
     # get the port using getPort in utils
-
+port = utils.getPort(port_input)
 
     # get user input to start motor
 
